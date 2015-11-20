@@ -1,12 +1,21 @@
-Pick A Stone
+# Pick A Stone
 
-Install:
+### Installation & Execution
 
-To play the game, download the executable jar file. Then, run it through
-your terminal by writting "java -jar Pick-a-Stone.jar". You must have the 
-jre on your computer to do so.
+##### With Git
+* $ git clone https://github.com/mscott99/PickaStone-solo
+* $ cd PickaStone
+* $ bash install.sh
+* $ pick-a-stone
 
-Game Instructions:
+##### Without Git
+* Download the jar file
+* $ java -jar Pick-a-Stone.jar
+
+### Dependencies
+* Java Runtime Environment
+
+### Game Instructions:
 
 This is a game where each players chooses a certain number of rocks 
 from the ones he posesses. Then, each player tryes to guess the total amount of rocks 
