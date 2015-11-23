@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class Computer extends Guy{
     int difficulty;
+    static boolean addUneven = true;
 //fields are located in guy class
     Computer(String name, int difficulty,int identity ){
     	this.difficulty = difficulty;
@@ -106,7 +107,16 @@ public int startTurn(){
 		for(int x =0; x< RockPlay.previousAnswers.get(0).size();x++){
 			rockRemain -= RockPlay.bro[RockPlay.previousAnswers.get(0).get(x)].numRocks;
 			
-			rocks = RockPlay.previousAnswers.get(1).get(x)-prevInfluence  - Math.round((rockRemain)/2);//his own rocks are not included in the rockRemain
+			
+			int remainProvisoire=rockRemain;
+			if((remainProvisoire/2)%2 ==1){
+				addUneven^=true;
+					if(addUneven){
+						remainProvisoire ++;
+					}
+			}
+			
+			rocks = RockPlay.previousAnswers.get(1).get(x)-prevInfluence  -(remainProvisoire/2);//his own rocks are not included in the rockRemain
 			//his choice, minus previous estimates, minus his rocks, minus the mean of the next players equals his rocks.
 			
 			if(rocks< 0){
@@ -118,9 +128,17 @@ public int startTurn(){
 			prevInfluence += rocks;
 			
 			
+		}// the flaw in this algorythm is that the computer does not take in count that choices of players are not their first choice
+		int realRemain=rockRemain-numRocks;
+		if((realRemain/2)%2 ==1){
+			addUneven^=true;
+				if(addUneven){
+					realRemain ++;
+				}
 		}
-		System.out.println(rockRemain);
-		int target = prevInfluence + rocksInHand + Math.round((rockRemain-numRocks)/2);
+		
+		
+		int target = prevInfluence + rocksInHand + realRemain/2;
 		
 		
 		int distance = 0;
@@ -129,9 +147,14 @@ public int startTurn(){
 		boolean addDistance = true;
 	
 		do{
+			
 			choice = target + ((-1)^posNeg)*distance;
-	
+			if(choice <0){
+				choice =0;
+			}
+			
 			if(addDistance){
+				
 				distance++;
 		
 			}
@@ -147,7 +170,12 @@ public int startTurn(){
 	RockPlay.previousAnswers.get(1).add(choice);
 	
 	System.out.println();
-		    //pour une difficulté plus élevé:
+	
+	
+	
+	
+	
+	//pour une difficulté plus élevé:
 		    //choice = rocksInHand + (int)((n - rocksInHand)/2) + w;
 			    if(numRocks != 1 && choice != 1){
 			    	System.out.println(name + " (he has " + numRocks + " rocks) : I think there are " + choice + " rocks");
