@@ -178,16 +178,16 @@ public int startTurn(){
 	//pour une difficulté plus élevé:
 		    //choice = rocksInHand + (int)((n - rocksInHand)/2) + w;
 			    if(numRocks != 1 && choice != 1){
-			    	System.out.println(name + " (he has " + numRocks + " rocks) : I think there are " + choice + " rocks");
+			    	System.out.println(name + " (he may have chosen up to " + numRocks + " rocks) : I think there are " + choice + " rocks");
 			    }
 			    else if (numRocks == 1){
-			    	System.out.println(name + " (he has " + numRocks + " rock) : I think there are " + choice + " rocks");
+			    	System.out.println(name + " (he may have chosen up to " + numRocks + " rock) : I think there are " + choice + " rocks");
 			    }
 			    else if(choice == 1){
-			    	System.out.println(name + " (he has " + numRocks + " rocks) : I think there is " + choice + " rock");
+			    	System.out.println(name + " (he may have chosen up to " + numRocks + " rocks) : I think there is " + choice + " rock");
 			    }
 			    else{
-			    	System.out.println(name + " (he has " + numRocks + " rock) : I think there is " + choice + " rock");
+			    	System.out.println(name + " (he may have chosen up to " + numRocks + " rock) : I think there is " + choice + " rock");
 			    }
 			   
 		    

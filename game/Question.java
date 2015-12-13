@@ -45,19 +45,28 @@ public class Question {
 		     
 			     if("yes".equals(answer)){
 			    	 
-			    	 return("This is a game where each players chooses a certain number of rocks "+'\n'+
-			     "from the ones he posesses. Then, each player tryes to guess the total amount of rocks " + '\n'+
-			     "chosen by all players. You cannot guess a number if it has already been guessed by a "+'\n'+
-			     "previous player. If you win a round, you loose a rock. If you get to zero rocks "+'\n'+
-			     "before any other player, you win. Enter your answers for the displayed questions " +'\n'+
-			     "in numbers or in letters depending on the question, then press enter. This version "+'\n'+
-			     "of the game plays with one human and up to five computers."
+			    	 return(
+						 
 			    			 );
 			    	 
 			    	
 				
 				}else if("no".equals(answer)){
-					return("");
+					return("This is a game where each players, at the start of each round, chooses a certain" + '\n' +
+"number of rocks from the ones he posesses(3 at the start) and places them in his" + '\n' +
+"'hand'. He therefore can choose between taking 0, 1, 2 or 3 rocks at the beginning" + '\n' +
+"of the first round. Then, each player tries to guess at their turn the total amount" + '\n' +
+"of rocks chosen by all players(including themselves). A player cannot guess a number" + '\n' +
+"if it has already been guessed previously by another player. If your guess is" + '\n' +
+"accurate, you win the round, which means that you loose a rock from your stack. At" + '\n' +
+"the start of the next round, you will have one less rock from which yu can choose" + '\n' +
+"choose. For example, after winning a total of one round, your possible choices become" + '\n' +
+"limited to 0, 1 or 2 rocks at the beginning of your round. If you are able to loose" + '\n' +
+"all your rocks before any other player, you win the game."+ '\n' + '\n' +
+
+"When playing in the command line, enter your answers to the displayed questions" + '\n' +
+"in numbers or in letters, depending on the question, then press enter. This version" + '\n' +
+"of the game only plays with one human player and as many computers as you wish.");
 				}
 		else{
 			
