@@ -47,12 +47,7 @@ public class Question {
 			    	 
 			    	 return(
 						 
-			    			 );
-			    	 
-			    	
-				
-				}else if("no".equals(answer)){
-					return("This is a game where each players, at the start of each round, chooses a certain" + '\n' +
+"This is a game where each players, at the start of each round, chooses a certain" + '\n' +
 "number of rocks from the ones he posesses(3 at the start) and places them in his" + '\n' +
 "'hand'. He therefore can choose between taking 0, 1, 2 or 3 rocks at the beginning" + '\n' +
 "of the first round. Then, each player tries to guess at their turn the total amount" + '\n' +
@@ -67,8 +62,10 @@ public class Question {
 "When playing in the command line, enter your answers to the displayed questions" + '\n' +
 "in numbers or in letters, depending on the question, then press enter. This version" + '\n' +
 "of the game only plays with one human player and as many computers as you wish.");
-				}
-		else{
+
+                                }else if("no".equals(answer)){
+                                        return("");
+	}	else{
 			
 			System.out.println("Sorry, the answer is not valid. Try again:");
 			return(findString());
@@ -120,7 +117,7 @@ public class Question {
 	    } catch (InterruptedException e) {}
 		System.out.println();
 		
-		System.out.println("This is the Pick-a-Stone solo game. Do you need instructions? (answer: yes or no");
+		System.out.println("This is the Pick-a-Stone solo game. Do you need instructions? (answer: yes or no)");
 		
 		String result = findString();
 		
